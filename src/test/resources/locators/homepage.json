@@ -1,0 +1,17 @@
+{
+  "pageHeader": {
+    "css": "h1",
+    "xpath": "//h1",
+    "text": "Example Domain"
+  },
+  "moreInformationLink": {
+    "css": "p a",
+    "xpath": "//a[starts-with(@href,'https://www.iana')]",
+    "text": "More information..."
+  },
+  "googleSearchInput": {
+    "css": ".SDkEP textarea",
+    "xpath": "//textarea[@name='q']",
+    "text": ""
+  }
+}

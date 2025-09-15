@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.playwright</groupId>
+    <artifactId>playwright-cucumber-framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>Yasin Deger</name>
+            <url>https://www.linkedin.com/in/yasindeger/</url>
+            <id>yd</id>
+            <email>yasin.deger@yahoo.com</email>
+            <roles>
+                <role>QA Engineer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.48.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>1.27.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sikulix</groupId>
+            <artifactId>sikulixapi</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+
+                <configuration>
+                    <includes>
+                        <include>*TestRunner.java</include>
+                    </includes>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <forkCount>4</forkCount>
+                    <reuseForks>true</reuseForks>
+
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                    <testFailureIgnore>true</testFailureIgnore>
+
+                    <systemPropertyVariables>
+                        <cucumber.plugin>
+                            html:target/cucumber-reports/cucumber.html,
+                            json:target/cucumber-reports/cucumber.json,
+                            junit:target/cucumber-reports/cucumber.xml
+                        </cucumber.plugin>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>playwright-cucumber</finalName>
+    </build>
+
+
+
+<!--    threadCount=4 her JVM de 4 thread-->
+<!--    forkCount=4 4 Thread 4 JVM -->
+
+
+</project>

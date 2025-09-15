@@ -1,0 +1,5 @@
+Network Profile, latency, Download (kbps), Upload (kbps)
+2G, 300, 250 , 50
+3G, 100, 750 , 250
+4G, 20, 4000 , 3000
+WIFI, 2, 30000 , 15000
