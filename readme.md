@@ -11,8 +11,8 @@ To get started with the framework, follow these steps:
    Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/YasinDeger48/playwright-cucumber-framework.git
-   cd playwright-cucumber-framework
+   git clone https://github.com/zafer-barutcu/playwright-tests.git
+   cd playwright-cucumber-framework-master
    ```
 
 ## Execute Tests in Parallel
